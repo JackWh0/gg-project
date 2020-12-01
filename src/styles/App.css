@@ -16,3 +16,8 @@ body {
   justify-content: center;
   color: white; 
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}

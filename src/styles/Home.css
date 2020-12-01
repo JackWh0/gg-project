@@ -28,19 +28,19 @@
     font-weight: bold;
 }
 
-.featured--body {
+.movieRow--body {
     margin-top: -90px;
     padding-top: 60px;
     font-family: 'Cinzel', serif;
 }
 
-.featured--container {
+.movieRow--container {
     justify-content: center;
     display: inline-block;
     margin-bottom: 40px;
 }
 
-.featured--container:nth-child(4n+1) {
+.movieRow--container:nth-child(4n+1) {
     clear: both;
     display: flex;
     flex-direction: row;
@@ -62,7 +62,7 @@
     .movieRow--item {
         width: -webkit-fill-available;
     }
-    .featured--body {
+    .movieRow--body {
         font-size: 14pt;
     }
     .featured {
