@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.movie--info {
+    background-color: #3c4047;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 90vh;
+    display: flex;
+}
+
+.movie--info-poster, .movie--info-data {
+    padding: 30px;
+    vertical-align: middle;
+}
+
+.movie--info-poster {
+   float: left;
+}
+
+.movie--info-poster img{
+    width: 25vw;
+}
+
+.movie--info-data {
+    font-size: 20pt;
+    float: right;
+}
+
+.movie--info-data h1 {
+    text-shadow: 5px 2px #000;
+}
+
+.movie--info-data h3 {
+    padding-top: 15px;
+}
+
+.overview p {
+    padding: 25px;
+    text-align: inherit;
+}
+
+.avaliation {
+    color: gold;
+}
+
+@media screen and (max-width: 900px) {
+    .movie--info-data p {
+        font-size: 20px;
+    }
+
+    .movie--info-data h1 {
+        font-size: 30px;
+    }
+
+    .movie--info-data h3 {
+        padding-top: 15px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .movie--info {
+      display: flex;
+      flex-direction: column;
+    }
+    .movie--info-poster {
+      width: 100%;
+      float: right;
+    }
+    .movie--info-data {
+      width: 100%;
+      float: right;
+    }
+  }

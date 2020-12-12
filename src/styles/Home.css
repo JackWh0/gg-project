@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.featured {
+    height: 100vh;
+}
+
+.featured--vertical {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, #282c34 10%, transparent 90%);
+    font-family: 'Bebas Neue', cursive;
+}
+
+.featured--horizontal {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 30px;
+    padding-bottom: 130px;
+    padding-top: 70px;
+}
+
+.featured--name {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.movieRow--body {
+    margin-top: -90px;
+    padding-top: 60px;
+    font-family: 'Cinzel', serif;
+}
+
+.movieRow--container {
+    justify-content: center;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.movieRow--container:nth-child(4n+1) {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.img {
+    display: block;
+    width: 330px;
+    cursor: pointer;
+    float: left;
+    margin-top: 50px;
+    transition: 0.5s;
+}
+
+.img:hover{
+    transform: scale(1.2);
+}
+
+.img:nth-child(4n+1) {
+    clear: both;
+}
+
+.featured--horizontal p {
+    font-size: 20px;
+}
+
+.linkIndicacao{
+    transition: 0.5s;
+}
+
+.linkIndicacao:hover {
+    text-shadow: 8px 2px #000;
+}
