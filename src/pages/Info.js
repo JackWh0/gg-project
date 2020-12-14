@@ -29,19 +29,19 @@ function Info({ match: { params: { id } } }) {
         loadAll();
     }, [id]);
 
-    return isLoading ? (<img src={Logo} alt="logo" className="logo" id="loading"/>) : (
+    return isLoading ? (<img src={Logo} alt="logo" className="logo" id="loading" />) : (
         <div id="about">
             <section className="navBar">
                 <div>
-                    <Link to={`/`}>
-                        <img src={Logo} alt="logo" className="logo"/>
+                    <Link to={"/"}>
+                        <img src={Logo} alt="logo" className="logo" />
                     </Link>
                 </div>
-                    <ul>
-                        <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Minhas Avaliações</a></li>
-                        <li><a href="#">Configurações</a></li>
-                    </ul>
+                <ul>
+                    <li><Link to="/">Perfil</Link></li>
+                    <li><Link to="/">Minhas Avaliações</Link></li>
+                    <li><Link to="/">Configurações</Link></li>
+                </ul>
             </section>
             <div className="movie--info">
                 <div className="movie--info-poster">
