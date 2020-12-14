@@ -35,7 +35,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "main": "index.js",
   "license": "MIT"
+=======
+  }
+>>>>>>> main
 }
