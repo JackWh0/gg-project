@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+.logo{
+    width: 70px;
+    margin-left: 30px;
+}
+
+.navBar {
+    padding-bottom: -50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    padding: 20px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    font-family: Oswald;
+    transition: 1s;
+    margin-right: 15px;
+}
+
+li:hover {
+    transform: scale(1.2);
+}
+
+#loading{
+    display: flex;
+    justify-content: center;
+    animation: rotation 0.5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

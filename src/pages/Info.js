@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Tmdb from '../Tmdb';
+import '../styles/navStyle.css';
 import '../styles/Info.css';
+import Logo from '../assets/ggLogo.png'
+import { Link } from "react-router-dom";
 
 function Info({ match: { params: { id } } }) {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,19 +29,30 @@ function Info({ match: { params: { id } } }) {
         loadAll();
     }, [id]);
 
-    return isLoading ? (<h1>Carregando...</h1>) : (
+    return isLoading ? (<img src={Logo} alt="logo" className="logo" id="loading" />) : (
         <div id="about">
-            <h1>{movie.title}</h1>
+            <section className="navBar">
+                <div>
+                    <Link to={"/"}>
+                        <img src={Logo} alt="logo" className="logo" />
+                    </Link>
+                </div>
+                <ul>
+                    <li><Link to="/">Perfil</Link></li>
+                    <li><Link to="/">Minhas Avaliações</Link></li>
+                    <li><Link to="/">Configurações</Link></li>
+                </ul>
+            </section>
             <div className="movie--info">
                 <div className="movie--info-poster">
                     <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
                 </div>
                 <div className="movie--info-data">
-                    <h3>Titulo Original: {movie.original_title}</h3>
-                    <p>★ {movie.vote_average}</p>
+                    <h1>{movie.title}</h1>
+                    <h3>Titulo Original: <i>{movie.original_title}</i></h3>
+                    <p className="avaliation">★ {movie.vote_average}</p>
                     <div className="overview">
-                        <h3>Sinopse</h3>
-                        <p>{movie.overview}</p>
+                        <p><strong>Sinopse: </strong>{movie.overview}</p>
                         <small>Gêneros:  {movieGenres} </small>
                     </div>
                 </div>

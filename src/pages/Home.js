@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Home.css';
 import Tmdb from '../Tmdb';
 import { Link } from "react-router-dom";
+import Logo from '../assets/ggLogo.png'
+import '../styles/navStyle.css';
 
 function Home() {
     const [featuredMovie, setFeaturedMovie] = useState(null);
@@ -27,34 +29,50 @@ function Home() {
         loadAll();
     }, []);
 
-    return isLoading ? (<h1>Carregando...</h1>) : (
-        <section className="featured" style={{
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${featuredMovie.backdrop_path})`
-        }}>
-            <div className="featured--vertical">
-                <div className="featured--horizontal">
-                    <div className="featured--name">
-                        <Link to={`/info/${featuredMovie.id}`}>
-                            {featuredMovie.title}
-                        </Link>
-                    </div>
+    return isLoading ? (<img src={Logo} alt="logo" className="logo" id="loading" />) : (
+        <div>
+            <section className="navBar">
+                <div>
+                    <Link to={"/"}>
+                        <img src={Logo} alt="logo" className="logo" />
+                    </Link>
                 </div>
-            </div>
-            <div className="movieRow--body">
-                <h1>Clique em um poster para saber mais</h1>
-                <div className="movieRow--container">
-                    {trendingList.length > 0 && trendingList.map((item, key) => (
-                        <div key={key} className="movieRow--item img">
-                            <Link to={`/info/${item.id}`}>
-                                <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+                <ul>
+                    <li><Link to="/">Perfil</Link></li>
+                    <li><Link to="/">Minhas Avaliações</Link></li>
+                    <li><Link to="/">Configurações</Link></li>
+                </ul>
+            </section>
+            <section className="featured" style={{
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundImage: `url(https://image.tmdb.org/t/p/original${featuredMovie.backdrop_path})`
+
+            }}>
+                <div className="featured--vertical">
+                    <div className="featured--horizontal">
+                        <div className="featured--name">
+                            <p className="Indication">Indicação de Hoje</p>
+                            <Link to={`/info/${featuredMovie.id}`} className="linkIndicacao">
+                                {featuredMovie.title}
                             </Link>
                         </div>
-                    ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+                <div className="movieRow--body">
+                    <h1>Clique em um poster para saber mais</h1>
+                    <div className="movieRow--container">
+                        {trendingList.length > 0 && trendingList.map((item, key) => (
+                            <div key={key} className="movieRow--item img">
+                                <Link to={`/info/${item.id}`}>
+                                    <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
     )
 }
 
